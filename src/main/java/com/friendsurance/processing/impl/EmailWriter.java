@@ -31,7 +31,6 @@ public class EmailWriter implements ItemWriter<Email>{
 		// For same user having multiple MailType, latest user is considered to send email
 		if(map.get(item.getRecipient().getEmail())==null) {
 			this.emailService.sendMail(item.getRecipient(), item.getMailType());
-			System.out.println("Mail sent to user :" + item.getRecipient().getEmail() + ", with mail type : "+ item.getMailType());
 			map.put(item.getRecipient().getEmail(), true);
 		} 
 	}

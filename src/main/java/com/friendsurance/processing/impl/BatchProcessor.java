@@ -25,7 +25,6 @@ public class BatchProcessor extends ItemProcessing<User, Email>{
 	 */
 	@Override
 	protected Email process(User user) {
-		System.out.println("Processing user :" + user);
 		MailType mailType = BatchUtils.BATCH_FUNCTION.getMailType(user);		
 		return new Email(mailType, new EmailReciepientImpl(user.getEmail()));
 	}
